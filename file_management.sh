@@ -18,96 +18,15 @@ file_management_menu() {
     echo -n "Enter your choice [1-11]: "
 }
 
-validate_file_existence() {
-    if [ ! -e "$1" ]; then
-        echo "Error: File '$1' does not exist."
-        return 1
-    fi
-    return 0
-}
+file_management_help_doc() {
+    local file_path="file_management_help_doc.txt"
 
-# Function to validate if a string is not empty
-validate_string() {
-    if [ -z "$1" ]; then
-        echo "Error: Input cannot be empty."
-        return 1
-    fi
-    return 0
-}
-
-# Function to get file path from user
-get_file_path() {
-    local prompt="$1"
-    local file_path
-    while true; do
-        echo -n "$prompt"
-        read file_path
-        validate_string "$file_path" && return 0 || echo "Please try again."
-    done
-}
-
-# Function to check for overwrite decision
-check_overwrite() {
-    local dest="$1"
-    local overwrite_choice
-    if [ -e "$dest" ]; then
-        echo "Warning: File '$dest' already exists."
-        while true; do
-            echo -n "Do you want to overwrite it? (yes/no): "
-            read overwrite_choice
-            case $overwrite_choice in
-                yes)
-                    return 0
-                    ;;
-                no)
-                    echo "Operation cancelled by user."
-                    return 1
-                    ;;
-                *)
-                    echo "Please answer 'yes' or 'no'."
-                    ;;
-            esac
-        done
-    fi
-    return 0
-}
-
-# Function to copy a file
-copy_file() {
-    local src dest
-    echo "Copy File Operation"
-    get_file_path "Enter the source file path: " && src=$REPLY
-    validate_file_existence "$src" || return 1
-
-    get_file_path "Enter the destination file path: " && dest=$REPLY
-    check_overwrite "$dest" || return 1
-
-    # Attempt to copy the file
-    if cp "$src" "$dest"; then
-        echo "File copied successfully from '$src' to '$dest'."
+    if [[ -f "$file_path" ]]; then
+        less "$file_path"
     else
-        echo "Error: Failed to copy the file. Please try again."
+        echo "File does not exist."
     fi
 }
-
-# Function to move a file
-move_file() {
-    local src dest
-    echo "Move File Operation"
-    get_file_path "Enter the source file path: " && src=$REPLY
-    validate_file_existence "$src" || return 1
-
-    get_file_path "Enter the destination file path: " && dest=$REPLY
-    check_overwrite "$dest" || return 1
-
-    # Attempt to move the file
-    if mv "$src" "$dest"; then
-        echo "File moved successfully from '$src' to '$dest'."
-    else
-        echo "Error: Failed to move the file. Please try again."
-    fi
-}
-
 
 # Handling user input for file management submenu
 handle_file_management_input() {
