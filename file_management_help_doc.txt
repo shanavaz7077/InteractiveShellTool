@@ -1,0 +1,93 @@
+File Management Help Documentation
+
+Welcome to the File Management Help Section! Here you will find detailed information about each file management command, including what it does, how to use it, and examples for better understanding.
+
+---
+
+1. Copy Files
+What: Copy files from one location to another.
+How: Enter the source file path and the destination file path when prompted.
+Example:
+    Enter source file: /path/to/source.txt
+    Enter destination file: /path/to/destination.txt
+This command will copy source.txt to the specified destination.
+
+---
+
+2. Move Files
+What: Move files from one location to another, and delete the source file after moving.
+How: Enter the source file path and the destination file path when prompted.
+Example:
+    Enter source file: /path/to/source.txt
+    Enter destination file: /path/to/destination.txt
+This command will move source.txt to the specified destination and remove the original file from the source location.
+
+---
+
+3. Delete Files
+What: Delete files or directories after confirmation.
+How: Enter the file or directory path to delete when prompted.
+Example:
+    Enter the file or directory to delete: /path/to/file.txt
+This command will delete file.txt after you confirm the deletion.
+
+---
+
+4. Rename Files
+What: Change the name of a file.
+How: Enter the current file name and the new file name when prompted.
+Example:
+    Enter the current file name: /path/to/oldname.txt
+    Enter the new file name: /path/to/newname.txt
+This command will rename oldname.txt to newname.txt.
+
+---
+
+5. Search for Files
+What: Search for files by name using patterns.
+How: Enter the search pattern and the directory to search in when prompted.
+Example:
+    Enter the search pattern: *.txt
+    Enter the directory to search in: /path/to/directory
+This command will search for all .txt files in the specified directory.
+
+---
+
+6. Archive Files
+What: Archive multiple files into a single compressed file (tar.gz format).
+How: Enter the files to archive (space-separated) and the archive name when prompted.
+Example:
+    Enter the files to archive (space-separated): file1.txt file2.txt
+    Enter the archive name: archive_name
+This command will create archive_name.tar.gz containing file1.txt and file2.txt.
+
+---
+
+7. Unarchive Files
+What: Extract files from an archive (tar.gz format).
+How: Enter the archive file name to extract when prompted.
+Example:
+    Enter the archive file name: archive_name.tar.gz
+This command will extract all files from archive_name.tar.gz.
+
+---
+
+8. Manage File Permissions
+What: Change the permissions of a file.
+How: Enter the file path and the new permissions when prompted.
+Example:
+    Enter the file for which to change permissions: /path/to/file.txt
+    Enter the new permissions (e.g., 755): 755
+This command will change the permissions of file.txt to 755.
+
+---
+
+9. Compare Files
+What: Compare the content of two files.
+How: Enter the paths of the two files to compare when prompted.
+Example:
+    Enter the first file: /path/to/file1.txt
+    Enter the second file: /path/to/file2.txt
+This command will compare file1.txt with file2.txt and show the differences.
+
+---
