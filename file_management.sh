@@ -65,8 +65,43 @@ copy_file() {
         if cp "$src" "$dest"; then
             echo "File copied successfully from '$src' to '$dest'."
             return 0
-        else
+        elses
             echo "Error: Failed to copy the file. Please try again."
+        fi
+    done
+}
+
+move_file() {
+    local src dest overwrite_choice
+
+    while true; do
+        # Get source file from user
+        echo -n "Enter the source file path: "
+        read src
+        validate_string "$src" && validate_file_existence "$src" || continue
+
+        # Get destination file from user
+        echo -n "Enter the destination file path: "
+        read dest
+        validate_string "$dest" || continue
+
+        # Check if the destination file already exists
+        if [ -e "$dest" ]; then
+            echo "Warning: File '$dest' already exists."
+            echo -n "Do you want to overwrite it? (yes/no): "
+            read overwrite_choice
+            if [ "$overwrite_choice" != "yes" ]; then
+                echo "Operation cancelled by user."
+                return 0
+            fi
+        fi
+
+        # Attempt to move the file
+        if mv "$src" "$dest"; then
+            echo "File moved successfully from '$src' to '$dest'."
+            return 0
+        else
+            echo "Error: Failed to move the file. Please try again."
         fi
     done
 }
