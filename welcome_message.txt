@@ -1,0 +1,6 @@
+Welcome to the Interactive Shell Management Tool!
+- his terminal is designed to streamline and manage your system tasks efficiently.
+- Use the menu below to select the operation category you wish to explore. 
+- Each category is packed with some functionalities 
+
+If you need assistance at any point, there will be a 'Help' option to access detailed guidelines for each operation.
