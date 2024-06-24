@@ -9,12 +9,15 @@ function show_menu() {
     echo "4. Rename files"
     echo "5. Search for files"
     echo "6. Archive files"
-    echo "7. Manage file permissions"
-    echo "8. Exit"
-    echo "Enter your choice (1-8):"
+    echo "7. Unarchive files"
+    echo "8. Compare files"
+    echo "9. Manage file permissions"
+    echo "10. Help"
+    echo "11. Exit"
+    echo "Enter your choice (1-11):"
     read choice
-    if ! [[ "$choice" =~ ^[1-8]$ ]]; then
-        echo "Invalid choice: Please enter a number between 1 and 8."
+    if ! [[ "$choice" =~ ^[1-9]|10|11$ ]]; then
+        echo "Invalid choice: Please enter a number between 1 and 11."
         return 1
     fi
 }
@@ -175,8 +178,41 @@ function manage_permissions() {
     fi
 }
 
+function unarchive_files() {
+    echo "Enter the archive file path:"
+    read archive_path
+    validate_path "$archive_path" || return
+    echo "Enter destination directory for extracted files:"
+    read destination
+    mkdir -p "$destination"
+    tar -xzf "$archive_path" -C "$destination"
+    if [ $? -eq 0 ]; then
+        echo "Files unarchived successfully."
+    else
+        echo "Failed to unarchive files. Please check the archive path and destination permissions."
+    fi
+}
 
-# Main loop
+# Function to compare two files
+function compare_files() {
+    echo "Enter the path of the first file:"
+    read file1
+    validate_path "$file1" || return
+    echo "Enter the path of the second file:"
+    read file2
+    validate_path "$file2" || return
+    echo "Comparison results:"
+    diff "$file1" "$file2" || echo "No differences found."
+}
+
+# Function to display help
+function display_help() {
+    echo "Displaying help information..."
+    help_file="file_management_help.txt"  # specify the path to your help file here
+    validate_path "$help_file" || return
+    less -M "$help_file"  # Opens the file in less, which provides a read-only view
+}
+
 while true; do
     show_menu || continue
     case $choice in
@@ -186,8 +222,11 @@ while true; do
         4) rename_files ;;
         5) search_files ;;
         6) archive_files ;;
-        7) manage_permissions ;;
-        8) echo "Exiting program."; break ;;
+        7) unarchive_files ;;
+        8) compare_files ;;
+        9) manage_permissions ;;
+        10) display_help ;;
+        11) echo "Exiting program."; break ;;
         *) echo "Unexpected error occurred." ;;
     esac
     echo
