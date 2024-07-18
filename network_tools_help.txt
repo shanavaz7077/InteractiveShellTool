@@ -1,0 +1,48 @@
+
+Welcome to the Network Tools Help Section! This guide provides detailed explanations, usage instructions, and examples for each network tool command to help you manage your network effectively.
+
+1. View Network Information
+   - What: Display detailed information about the IP configuration, subnet mask, and connection status of your network interfaces.
+   - How: Select this option from the menu to automatically display network information.
+   - Example:
+     - Output includes IP address, netmask, and other network details for all active interfaces.
+
+2. Ping a Host
+   - What: Verify connectivity with another device on the network by sending ping requests.
+   - How: Choose this option, then enter the hostname or IP address of the target device.
+   - Example:
+     - Enter the host to ping: `192.168.1.1`
+     - The system will output the ping results showing response times.
+
+3. Network Diagnostics
+   - What: Perform a route trace to diagnose network path issues to a specified destination.
+   - How: Select this function and then enter the destination IP address or hostname.
+   - Example:
+     - Enter destination to trace: `google.com`
+     - The system will display the path packets take to reach the destination.
+
+4. Manage Network Connections
+   - What: Enable or disable network interfaces on your system.
+   - How: Choose this option, specify the network interface, and select enable or disable.
+   - Example:
+     - Enter the interface (e.g., eth0, wlan0): `eth0`
+     - Enable (e) or Disable (d): `e`
+     - The system will confirm the interface has been enabled.
+
+5. Network Traffic Monitoring
+   - What: Monitor and analyze incoming and outgoing network traffic in real-time.
+   - How: Select this option to start monitoring network traffic using tools like `iftop`.
+   - Example:
+     - When selected, `iftop` will open, displaying real-time traffic data.
+
+6. Wi-Fi Management
+   - What: Manage Wi-Fi settings, including scanning for networks and connecting to Wi-Fi networks.
+   - How: Select this function, then enter the SSID and password of the Wi-Fi network you wish to connect to.
+   - Example:
+     - Enter Wi-Fi SSID to connect: `HomeNetwork`
+     - Enter password: [password entered]
+     - The system will attempt to connect and output the connection status.
+
+---
+
+This help document provides users with clear instructions on how to use each feature of the network tools module in your custom terminal interface.
