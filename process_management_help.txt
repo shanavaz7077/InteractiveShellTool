@@ -1,0 +1,37 @@
+Process Management Help Documentation
+
+Welcome to the Process Management Help Section! This guide provides detailed explanations, usage instructions, and examples for each command related to managing processes on your system. Our aim is to make process management intuitive and straightforward.
+
+1. View Running Processes
+   - What: Display a list of all currently running processes along with details such as PID, user, CPU usage, and memory consumption.
+   - How: Select this option from the menu to automatically display the active processes.
+   - Example:
+       - Output includes process ID, user, CPU and memory usage, start time, and command line of the running process.
+
+2. Terminate a Process
+   - What: Stop a process either by its name or PID.
+   - How: Select this option, then enter either the process name or PID to terminate it.
+   - Example:
+       - To terminate a process by PID:
+         "Enter process name or PID to terminate: 1234"
+       - To terminate a process by name:
+         "Enter process name or PID to terminate: firefox"
+
+3. Start a Process
+   - What: Launch a new process using a command line instruction.
+   - How: Choose this option and enter the command you wish to execute to start a new process.
+   - Example:
+       - To start a new instance of a web browser:
+         "Enter the command to start a new process: firefox"
+       - To open a text editor:
+         "Enter the command to start a new process: gedit"
+
+Navigating the Process Management Tool:
+- Use the numeric menu to select an option. For example, enter '1' to view running processes, '2' to terminate a process, or '3' to start a new process.
+- After performing an action, you will be prompted to either continue with another task by selecting another option or exit by choosing '4'.
+
+Error Handling and Validation:
+- The system checks for invalid inputs and will prompt you to re-enter your choice if the input does not match expected parameters.
+- Specific validation checks include confirming the existence of a process ID before attempting to terminate it and ensuring command strings are properly formatted before execution.
+
+We hope this documentation assists you in managing processes effectively. For further assistance, enter 'Help' at any main menu prompt.
