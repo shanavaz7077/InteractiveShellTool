@@ -1,0 +1,51 @@
+System Configuration Help Documentation
+
+Welcome to the System Configuration Help Section! This guide provides detailed explanations, usage instructions, and examples for each system configuration command to help you manage your system effectively.
+
+1. View System Information
+    What: Display detailed information about the operating system, hardware, and resource usage.
+    How: Select this option from the menu to automatically display system information.
+    Example:
+        Output includes OS version, hostname, memory usage, disk usage, and CPU information.
+
+2. Manage User Accounts
+    What: Create, delete, or modify user accounts on the system.
+    How: Select this option and then choose the specific action (create, delete, modify) followed by the username.
+    Example:
+        - To create a user:
+        Enter action: create
+        Enter username: newuser
+        - To delete a user:
+        Enter action: delete
+        Enter username: olduser
+        - To modify a user:
+        Enter action: modify
+        Enter username: existinguser
+
+3. Install/Remove Software
+    What: Install new software packages or remove existing ones using the system's package manager.
+    How: Select this function, then specify whether to install or remove a package, followed by the package name.
+    Example:
+        - To install a package:
+        Enter action: install
+        Enter package name: examplepackage
+        - To remove a package:
+        Enter action: remove
+        Enter package name: examplepackage
+
+4. Real-time System Monitoring
+    What: View real-time statistics about system usage, including CPU, memory, and disk activity.
+    How: Choose this option to launch a system monitoring tool such as top.
+    Example:
+        When selected, top will open, showing real-time system performance data.
+
+5. System Backup and Restore
+    What: Perform backups of system data or restore data from a backup.
+    How: Choose this option, then decide whether to perform a backup or a restoration, followed by the necessary paths.
+    Example:
+        - To perform a backup:
+        Enter action: Backup
+        Enter directory path to backup: /path/to/importantdata
+        - To restore from a backup:
+        Enter action: Restore
+        Enter path of backup file to restore: /path/to/backupfile.tar.gz
